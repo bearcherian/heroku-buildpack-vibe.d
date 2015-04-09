@@ -1,9 +1,12 @@
 #!/bin/sh
 
 # this pack is valid for apps with a dub.json in the root
+echo "Root directory: $1"
+
 if [ -f $1/dub.json ]; then
   echo "D (dub package manager)"
   exit 0
 else
+  echo "Not a valid D project"
   exit 1
 fi
