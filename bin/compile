@@ -75,7 +75,7 @@ end
 
 puts_caption 'Building app...'
 Dir.chdir(BUILD_DIR) do
-  puts_indent `PATH=$PATH:#{DMD_BIN_DIR_PATH} #{DUB_BIN_PATH} build --build=release`
-#  FileUtils.rm_rf(%w(source src views))
+  puts_indent `PATH=$PATH:#{DMD_BIN_DIR_PATH} #{DUB_BIN_PATH} build`
+  FileUtils.rm_rf(%w(source src views))
   fail 'Build failed!' unless $?.success?
 end
